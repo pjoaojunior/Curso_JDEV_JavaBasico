@@ -1,5 +1,7 @@
 package classes;
 
+import javax.swing.JOptionPane;
+
 public class Teste {
 	private double a;
 	private double b;
@@ -7,6 +9,10 @@ public class Teste {
 	private double delta;
 	private double x1;
 	private double x2;
+	private int nota1, nota2;
+	private double media;
+	private String senha = "admin";
+	private boolean acessoPermitido = false;
 
 	public double getA() {
 		return a;
@@ -56,23 +62,70 @@ public class Teste {
 		this.x2 = x2;
 	}
 
+	public int getNota1() {
+		return nota1;
+	}
+
+	public void setNota1(int nota1) {
+		this.nota1 = nota1;
+	}
+
+	public int getNota2() {
+		return nota2;
+	}
+
+	public void setNota2(int nota2) {
+		this.nota2 = nota2;
+	}
+
+	public double getMedia() {
+		return media;
+	}
+
+	public void setMedia(double media) {
+		this.media = media;
+	}
+	
+	
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	
+	public boolean isAcessoPermitido() {
+		return acessoPermitido;
+	}
+
+	public void setAcessoPermitido(boolean acessoPermitido) {
+		this.acessoPermitido = acessoPermitido;
+	}
+
 	public Teste() {
 		super();
 	}
 
-	public void calculoBaskara(int a, int b, int c) {
-		this.a = a;
-		this.b = Math.pow(b, 2);
-		this.c = c;
-		this.delta = this.b - (4 * this.a * this.c);
-		if (this.delta < 0) {
-			System.out.println("Não a raizes Reais, pois Delta é um numero menor que 0, Delta = "+ this.delta);
+	public double calcMedia(int nota1, int nota2) {
+		this.nota1 = nota1;
+		this.nota2 = nota2;
+		this.media = (double) (this.nota1 + this.nota2) / 2;
+		return media;
+	}
+
+	public void aprovado() {
+		if (this.getMedia() >= 50) {
+			if (this.getMedia() >= 70) {
+				JOptionPane.showMessageDialog(null, "Média do aluno: " + this.getMedia() + ": Aprovado");
+			} else {
+				JOptionPane.showMessageDialog(null,"Média do aluno: " + this.getMedia() + ": Recuperação");
+			}
 		} else {
-			this.x1 = (-(b) + (Math.sqrt(delta))) / 2 * this.a;
-			this.x2 = (-(b) - (Math.sqrt(delta))) / 2 * this.a;
-			System.out.println("Os valores de x1 é "+ this.x1);
-			System.out.println("Os valores de x2 é "+ this.x2);
+			JOptionPane.showMessageDialog(null,"Média do aluno: " + this.getMedia() + ": Reprovado");
 		}
 	}
+
+	
 
 }
