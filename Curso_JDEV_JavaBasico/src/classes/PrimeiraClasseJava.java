@@ -13,6 +13,8 @@ public class PrimeiraClasseJava {
 		Teste test1 = new Teste();
 		//Scanner scan = new Scanner(System.in);
 		
+		// nova tentativa de Commit
+		
 		int maxTentativas = 3;
 
 		while (!test1.isAcessoPermitido()) {
