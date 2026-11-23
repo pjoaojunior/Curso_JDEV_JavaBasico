@@ -1,4 +1,4 @@
-package classes;
+package br.com.jdev.javabasico.classes;
 
 import javax.swing.JOptionPane;
 

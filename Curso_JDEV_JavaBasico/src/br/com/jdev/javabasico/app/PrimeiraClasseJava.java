@@ -1,8 +1,10 @@
-package classes;
+package br.com.jdev.javabasico.app;
 
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
+
+import br.com.jdev.javabasico.classes.Teste;
 
 public class PrimeiraClasseJava {
 
