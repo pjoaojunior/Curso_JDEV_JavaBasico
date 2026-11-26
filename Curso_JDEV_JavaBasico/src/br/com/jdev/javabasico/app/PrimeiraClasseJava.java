@@ -1,10 +1,9 @@
 package br.com.jdev.javabasico.app;
 
-import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-import br.com.jdev.javabasico.classes.Teste;
+import br.com.jdev.javabasico.classes.Aluno;
 
 public class PrimeiraClasseJava {
 
@@ -12,20 +11,17 @@ public class PrimeiraClasseJava {
 
 		JOptionPane.showInternalMessageDialog(null, "Olá Mundo!!");
 
-		Teste test1 = new Teste();
-		//Scanner scan = new Scanner(System.in);
-		
-		// nova tentativa de Commit
-		
+		Aluno aluno1 = new Aluno();
+			
 		int maxTentativas = 3;
 
-		while (!test1.isAcessoPermitido()) {
+		while (!aluno1.isAcessoPermitido()) {
 			 for( int tentativa = 1; tentativa <= maxTentativas; tentativa++) {
 				String senha = JOptionPane.showInputDialog("Digite sua Senha: ");
 			 
-					if (senha.equals(test1.getSenha())) {
+					if (senha.equals(aluno1.getSenha())) {
 						 JOptionPane.showMessageDialog(null,"Senha correta!");
-						test1.setAcessoPermitido(true);
+						aluno1.setAcessoPermitido(true);
 						break;
 					}else {
 						int restantes = maxTentativas - tentativa;
@@ -36,7 +32,7 @@ public class PrimeiraClasseJava {
 					}
 			 }
 			 
-			 if (!test1.isAcessoPermitido()){
+			 if (!aluno1.isAcessoPermitido()){
 				 JOptionPane.showMessageDialog(null,"Acesso Bloquedo");
 				 JOptionPane.showMessageDialog(null,"Aguarde 5 minutos.");
 				
@@ -52,8 +48,10 @@ public class PrimeiraClasseJava {
 				 JOptionPane.showMessageDialog(null,"Você pode tentar novamente.");
 			 }
 		}
-		 test1.calcMedia(70, 70);
-		 test1.aprovado();
+		aluno1.setNota1(70);
+		aluno1.setNota2(50);
+		 aluno1.calcMedia();
+		 aluno1.aprovado();
 	}
 
 }

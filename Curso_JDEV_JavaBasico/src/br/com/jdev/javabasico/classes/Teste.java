@@ -12,8 +12,7 @@ public class Teste {
 	private int nota1, nota2;
 	private double media;
 	private String senha = "admin";
-	private boolean acessoPermitido = false;
-
+	
 	public double getA() {
 		return a;
 	}
@@ -87,45 +86,15 @@ public class Teste {
 	}
 	
 	
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
 	
-	public boolean isAcessoPermitido() {
-		return acessoPermitido;
-	}
-
-	public void setAcessoPermitido(boolean acessoPermitido) {
-		this.acessoPermitido = acessoPermitido;
-	}
-
+	
 	public Teste() {
 		super();
 	}
 
-	public double calcMedia(int nota1, int nota2) {
-		this.nota1 = nota1;
-		this.nota2 = nota2;
-		this.media = (double) (this.nota1 + this.nota2) / 2;
-		return media;
-	}
-
-	public void aprovado() {
-		if (this.getMedia() >= 50) {
-			if (this.getMedia() >= 70) {
-				JOptionPane.showMessageDialog(null, "Média do aluno: " + this.getMedia() + ": Aprovado");
-			} else {
-				JOptionPane.showMessageDialog(null,"Média do aluno: " + this.getMedia() + ": Recuperação");
-			}
-		} else {
-			JOptionPane.showMessageDialog(null,"Média do aluno: " + this.getMedia() + ": Reprovado");
-		}
+	
 	}
 
 	
 
-}
+
