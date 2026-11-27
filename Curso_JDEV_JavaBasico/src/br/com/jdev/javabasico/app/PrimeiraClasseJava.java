@@ -1,6 +1,5 @@
 package br.com.jdev.javabasico.app;
 
-
 import javax.swing.JOptionPane;
 
 import br.com.jdev.javabasico.classes.Aluno;
@@ -12,46 +11,22 @@ public class PrimeiraClasseJava {
 		JOptionPane.showInternalMessageDialog(null, "Olá Mundo!!");
 
 		Aluno aluno1 = new Aluno();
-			
-		int maxTentativas = 3;
 
-		while (!aluno1.isAcessoPermitido()) {
-			 for( int tentativa = 1; tentativa <= maxTentativas; tentativa++) {
-				String senha = JOptionPane.showInputDialog("Digite sua Senha: ");
-			 
-					if (senha.equals(aluno1.getSenha())) {
-						 JOptionPane.showMessageDialog(null,"Senha correta!");
-						aluno1.setAcessoPermitido(true);
-						break;
-					}else {
-						int restantes = maxTentativas - tentativa;
-						JOptionPane.showMessageDialog(null, "Senha incorreta");
-							if (restantes > 0) {
-								JOptionPane.showMessageDialog(null, "Tentativas restantes " + restantes);	
-							}
-					}
-			 }
-			 
-			 if (!aluno1.isAcessoPermitido()){
-				 JOptionPane.showMessageDialog(null,"Acesso Bloquedo");
-				 JOptionPane.showMessageDialog(null,"Aguarde 5 minutos.");
-				
-				 try {
-					 Thread.sleep(300000);
-					 
-				 } catch (InterruptedException e){
-					 Thread.currentThread().interrupt();
-					 JOptionPane.showMessageDialog(null,"Espera interrompida. ");
-					 return;
-				 }
-				 JOptionPane.showMessageDialog(null, "Bloqueio encerrado.");
-				 JOptionPane.showMessageDialog(null,"Você pode tentar novamente.");
-			 }
-		}
-		aluno1.setNota1(70);
-		aluno1.setNota2(50);
-		 aluno1.calcMedia();
-		 aluno1.aprovado();
+		aluno1.setNome(JOptionPane.showInputDialog(null,"Digite o nome do aluno."));
+		aluno1.setDtNascimento((JOptionPane.showInputDialog(null,"Digite sua data de nascimento.")));
+		aluno1.setRegistroGeral((JOptionPane.showInputDialog(null,"Digite ser RG.")));
+		aluno1.setNumeroCpf((JOptionPane.showInputDialog(null,"Digite o numero do seu CPF.")));
+		aluno1.setGenero(JOptionPane.showInputDialog(null,"Digite seu Genero."));
+		aluno1.setNomeMae((JOptionPane.showInputDialog(null,"Digite o nome de sua Mãe.")));
+		aluno1.setNomePai (JOptionPane.showInputDialog(null,"Digite o nome do seu Pai."));
+		aluno1.setSerieMatriculado(JOptionPane.showInputDialog(null,"Digite a série do ALuno."));
+		aluno1.setDtMatricula(JOptionPane.showInputDialog(null, "Digite a data da matricula."));
+		
+		aluno1.setNota1(Double.parseDouble(JOptionPane.showInputDialog(null, "digite a 1ª nota: ")));
+		aluno1.setNota2(Double.parseDouble(JOptionPane.showInputDialog(null, "digite a 2ª nota: ")));
+		aluno1.calcMedia();
+		aluno1.aprovado();
+		JOptionPane.showMessageDialog(null, aluno1);
 	}
 
 }

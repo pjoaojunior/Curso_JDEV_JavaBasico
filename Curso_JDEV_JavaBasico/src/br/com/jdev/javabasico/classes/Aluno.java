@@ -195,4 +195,16 @@ public class Aluno {
 		}
 	}
 
+
+	@Override
+	public String toString() {
+		return "Dados do Aluno:\n nome: " + nome + ";\n dtNascimento: " + dtNascimento + ";\n registroGeral: " + registroGeral
+				+ ";\n numeroCpf: " + numeroCpf + ";\n nomeMae: " + nomeMae + ";\n nomePai: " + nomePai + ";\n dtMatricula: "
+				+ dtMatricula + ";\n serieMatriculado: " + serieMatriculado + ";\n genero: " + genero + ";\n nota1: " + nota1
+				+ ";\n nota2: " + nota2 + ";\n media: " + media + "\n aprovado2(): "  + aprovado2();
+	}
+
+	
+	
+
 }
